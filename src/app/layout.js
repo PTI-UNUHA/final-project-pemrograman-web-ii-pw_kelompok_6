@@ -1,11 +1,25 @@
-import "./globals.css";
+import Link from "next/link";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id">
+    <html>
       <body>
-        <nav style={{ padding: "15px", background: "#2563eb", color: "white" }}>
-          EduCourse
+        <nav
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "20px 40px",
+            background: "#fff",
+            borderBottom: "1px solid #eee"
+          }}
+        >
+          <strong>MUMA STORE</strong>
+
+          <div style={{ display: "flex", gap: "20px" }}>
+            <Link href="/">Home</Link>
+            <Link href="/produk">Produk</Link>
+          </div>
         </nav>
 
         {children}
