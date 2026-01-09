@@ -1,90 +1,360 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
+/* ===== PAGE ===== */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #2563eb, #ffffff);
   font-family: Arial, sans-serif;
-  background: #f5f7fa;
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: auto;
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #1d4ed8;
+  color: white;
 }
 
-/* Title */
-.title {
+.navbar-title {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
-/* GRID */
-.grid {
+.navbar-menu a {
+  margin-left: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-menu a:hover {
+  text-decoration: underline;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 30px 20px;
+  color: white;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+/* ===== COURSE SECTION ===== */
+.course-section {
+  padding: 40px;
+}
+
+.course-section h3 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+/* ===== GRID (FIX 3 KOLOM) ===== */
+.course-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* 3–3 */
+  gap: 32px;
 }
 
-/* CARD */
-.card {
-  background: #fff;
-  border-radius: 12px;
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== CARD ===== */
+.course-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  display: flex;
-  flex-direction: column; /* PENTING */
-  height: 100%; /* SAMA TINGGI */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
 }
 
-/* IMAGE */
-.card img {
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== IMAGE (LEBAR & TIDAK KEPOTONG) ===== */
+.course-image-wrapper {
   width: 100%;
-  height: 180px; /* FIX TINGGI */
-  object-fit: cover;
+  height: 220px; /* agak melebar */
+  background: #f3f4f6;
 }
 
-/* BODY */
-.card-body {
-  padding: 16px;
-  flex: 1; /* ISI MENGISI TENGAH */
+.course-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* TIDAK KEPOTONG */
 }
 
-/* BRAND */
-.author {
-  font-size: 13px;
-  color: #555;
-  margin-bottom: 6px;
+/* ===== CONTENT ===== */
+.course-content {
+  padding: 20px;
 }
 
-/* TITLE PRODUK */
-.course-title {
-  font-size: 16px;
-  font-weight: bold;
+.course-level {
+  display: inline-block;
+  background: #dbeafe;
+  color: #2563eb;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
   margin-bottom: 8px;
 }
 
-/* SPEC */
-.meta {
-  font-size: 13px;
-  color: #666;
+.course-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.course-instructor {
+  font-size: 14px;
+  color: #374151;
+}
+
+.course-students {
+  font-size: 12px;
+  color: #6b7280;
   margin-bottom: 10px;
 }
 
-/* RATING */
-.rating {
-  font-size: 14px;
-  color: #f4b400;
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
 }
 
-/* PRICE */
-.price {
-  border-top: 1px solid #eee;
-  padding: 14px;
+.course-rating {
+  color: #facc15;
+}
+
+.course-price {
   font-weight: bold;
+  color: #2563eb;
+}
+
+/* ===== BUTTON ===== */
+.course-button {
+  display: block;
+  text-align: center;
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.course-button:hover {
+  opacity: 0.9;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(to bottom, #2563eb, #60a5fa);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 24px;
   font-size: 16px;
-  text-align: right;
-  background: #fafafa;
+}
+
+.hero-button {
+  background: white;
+  color: #2563eb;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hero-button:hover {
+  opacity: 0.9;
+}
+
+
+/* SEARCH WRAPPER */
+.search-wrapper {
+  position: relative;
+  max-width: 420px;
+  margin-bottom: 36px;
+}
+
+/* ICON */
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #9ca3af;
+}
+
+/* INPUT */
+.search-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  font-size: 14px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+/* FOCUS EFFECT */
+.search-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+}
+
+
+/* DETAIL PAGE */
+.detail-container {
+  padding: 40px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+}
+
+.detail-image-wrapper {
+  background: #f1f5f9;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-image {
+  max-width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+}
+
+.detail-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+.detail-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.detail-instructor {
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.detail-description {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.detail-subtitle {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.detail-list li {
+  margin-bottom: 8px;
+}
+
+.detail-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.detail-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.detail-button {
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.detail-button:hover {
+  opacity: 0.9;
+}
+
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 20px;
+  padding: 10px 16px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #1d4ed8; /* biru */
+  background-color: #eff6ff;
+
+  border-radius: 10px;
+  text-decoration: none;
+
+  width: fit-content;
+  transition: all 0.25s ease;
+}
+
+/* hover effect */
+.back-link:hover {
+  background-color: #dbeafe;
+  color: #1e40af;
+  transform: translateX(-4px);
+}
+
+/* panah lebih halus */
+.back-link::before {
+  content: "←";
+  font-size: 16px;
 }
